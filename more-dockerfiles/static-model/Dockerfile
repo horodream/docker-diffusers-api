@@ -1,0 +1,16 @@
+ARG FROM_IMAGE="gadicc/diffusers-api"
+FROM ${FROM_IMAGE} as base
+ENV FROM_IMAGE=${FROM_IMAGE}
+
+ARG MODEL_ID="stabilityai/stable-diffusion-2-1-base"
+ENV MODEL_ID=${MODEL_ID}
+ARG MODEL_PRECISION="fp16"
+ENV MODEL_PRECISION=${MODEL_PRECISION}
+ARG MODEL_REVISION="fp16"
+ENV MODEL_REVISION=${MODEL_REVISION}
+
+# Download the model
+ENV RUNTIME_DOWNLOADS=0
+RUN python3 download.py
+
+CMD python3 -u server.py
