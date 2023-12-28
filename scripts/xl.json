@@ -1,0 +1,18 @@
+{
+  "modelInputs": {
+    "prompt": "Super dog",
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "width": 512,
+    "height": 512,
+    "seed": 3239022079
+  },
+  "callInputs": {
+    "MODEL_ID": "NED-v1-22",
+    "CHECKPOINT_URL": "https://civitai.com/api/download/models/64094#fname=neverendingDreamNED_v122BakedVae.safetensors",
+    "MODEL_PRECISION": "fp16",
+    "lora_weights": "https://civitai.com/api/download/models/6244#fname=makima_offset.safetensors",
+    "safety_checker": false,
+    "PIPELINE": "lpw_stable_diffusion"
+  }
+}
